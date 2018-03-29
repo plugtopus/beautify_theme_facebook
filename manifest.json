@@ -1,0 +1,26 @@
+{
+    "background": {
+        "scripts": ["js/jquery.min.js", "js/bg.js"]
+    },
+    "browser_action": {
+        "default_icon": "icon/icon.png",
+        "default_popup": "html/popup.html"
+    },
+    "content_scripts": [{
+        "js": ["js/jquery.min.js", "js/themes.js", "js/content.js"],
+        "matches": ["*://*.facebook.com/*"],
+        "run_at": "document_start"
+    }],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "default_locale": "ru",
+    "description": "__MSG_desc__",
+    "icons": {
+        "128": "icon/icon.png"
+    },
+    "manifest_version": 2,
+    "name": "__MSG_name__",
+    "permissions": ["tabs", "webRequest", "*://*/*", "\u003Call_urls>", "contextMenus", "webNavigation", "webRequestBlocking", "storage"],
+    "short_name": "__MSG_name__",
+    "update_url": "https://clients2.google.com/service/update2/crx",
+    "version": "23.3.18.1"
+}

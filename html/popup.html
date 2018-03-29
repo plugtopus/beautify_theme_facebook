@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html id="extension">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Красивые темы для FB</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" href="../styles/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../styles/bootstrap-toggle.min.css" rel="stylesheet">
+    <link type="text/css" href="../styles/colors.css" rel="stylesheet" />
+    <link type="text/css" href="../styles/popup.css" rel="stylesheet" />
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap-toggle.min.js"></script>
+    <script type="text/javascript" src="../js/themes.js"></script>
+    <script type="text/javascript" src="../js/colors.js"></script>
+    <script type="text/javascript" src="../js/popup.js"></script>
+</head>
+
+<body class="hidden">
+    <div id="app">
+        <header>
+        </header>
+
+        <section id="notification"></section>
+
+        <section id="edit-list-screen">
+            <div class="form regular sand">
+                <div class="input-group pad10">
+                    <span class="input-group-addon" id="txt_theme_name">Название темы</span>
+                    <input type="text" id="theme_name" class="form-control" data-lettercase="uppercase" size="7">
+                    <input type="hidden" id="old_theme_name">
+                </div>
+
+                <div class="input-group">
+                    <div class="minicolors minicolors-theme-bootstrap">
+                        <input type="text" id="header_color" class="form-control minicolors-input" data-lettercase="uppercase" size="7">
+                    </div>
+                    <span class="input-group-addon" id="txt_header_color">Цвет шапки сайта</span>
+                </div>
+
+                <div class="input-group">
+                    <div class="minicolors minicolors-theme-bootstrap">
+                        <input type="text" id="text_header_color" class="form-control minicolors-input" data-lettercase="uppercase" size="7">
+                    </div>
+                    <span class="input-group-addon" id="txt_text_header_color">Цвет текста в шапке</span>
+                </div>
+
+                <div class="input-group">
+                    <div class="minicolors minicolors-theme-bootstrap">
+                        <input type="text" id="theme_color" class="form-control minicolors-input" data-lettercase="uppercase" size="7">
+                    </div>
+                    <span class="input-group-addon" id="txt_theme_color">Цвет заднего фон</span>
+                </div>
+
+                <div class="input-group">
+                    <div class="minicolors minicolors-theme-bootstrap">
+                        <input type="text" id="inner_boxes_color" class="form-control minicolors-input" data-lettercase="uppercase" size="7">
+                    </div>
+                    <span class="input-group-addon" id="txt_boxes_color">Цвет фона таблиц</span>
+                </div>
+
+                <div class="input-group">
+                    <div class="minicolors minicolors-theme-bootstrap">
+                        <input type="text" id="heading_color" class="form-control minicolors-input" data-lettercase="uppercase" size="7">
+                    </div>
+                    <span class="input-group-addon" id="txt_heading_color">Цвет ссылок и текста</span>
+                </div>
+
+                <div class="input-group">
+                    <div class="minicolors minicolors-theme-bootstrap">
+                        <input type="text" id="text_color" class="form-control minicolors-input" data-lettercase="uppercase" size="7">
+                    </div>
+                    <span class="input-group-addon" id="txt_boxes_color">Цвет текста</span>
+                </div>
+
+                <div class="input-group">
+                    <div class="minicolors minicolors-theme-bootstrap">
+                        <input type="text" id="buttons_color" class="form-control minicolors-input" data-lettercase="uppercase" size="7">
+                    </div>
+                    <span class="input-group-addon" id="txt_buttons_color">Цвет кнопок</span>
+                </div>
+
+                <div class="input-group">
+                    <div class="minicolors minicolors-theme-bootstrap">
+                        <input type="text" id="borders_color" class="form-control minicolors-input" data-lettercase="uppercase" size="7">
+                    </div>
+                    <span class="input-group-addon" id="txt_borders_color">Цвет обводки</span>
+                </div>
+
+                <div class="bg-success save_msg save_hidden dv_center" id="txt_msg"></div>
+
+                <div class="dv_center">
+                    <button class="btn btn-dark btn-sm btn_down" id="save_theme">Сохранить</button>
+                    <button class="btn btn-primary btn-sm btn_down" id="savenew_theme">Сохранить как новую</button>
+                    <button class="btn btn-danger btn-sm btn_down" id="cancel_theme">Отмена</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="main-screen">
+            <div class="checkbox dv_center title_dv title_fixed">
+                <label>
+                    <input type="checkbox" data-toggle="toggle" data-offstyle="danger" id="enable_color">Включить красивую тему
+                </label>
+            </div>
+
+            <section class="templates-list">
+                <h2>Сохранить тему</h2>
+                <div class="below">
+                    <ul id="templatesList"></ul>
+                </div>
+            </section>
+            <div class="dv_center">
+                <button class="btn btn-dark btn-sm" id="create_theme">Создать тему</button>
+            </div>
+        </section>
+    </div>
+
+    <div id="templates">
+        <template id="theme">
+            <li>
+                <span class="x">x</span>
+                <span class="txt">{{content}}</span>
+                <div class="toggles">
+                    <a href="#" class="edit">Изменить</a>
+                </div>
+            </li>
+        </template>
+        <template id="themep">
+            <li class="litheme">
+                <span class="txt">{{content}}</span>
+                <div class="toggles">
+                    <a href="#" class="edit">Изменить</a>
+                </div>
+            </li>
+        </template>
+    </div>
+    <script src="../js/bootstrap-confirmation.js"></script>
+</body>
+
+</html>
